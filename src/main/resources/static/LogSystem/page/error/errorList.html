@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>错误日志管理</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../css/font-awesome/css/font-awesome.css" />
+		<link rel="stylesheet" href="../../css/public.css" media="all" />
+	</head>
+
+	<body class="childrenBody" style="overflow-x: hidden;overflow-y: scroll;">
+		
+		<div class="hasInfo">
+			<form class="layui-form layui-row">
+				<blockquote class="layui-elem-quote quoteBox magt10 chosetimebox">
+					<div class="layui-inline radioGroup">
+						<div class="layui-unselect layui-form-checkbox layui-form-checked todaypie" lay-skin=""><span>查看今日</span><i class="layui-icon layui-icon-ok"></i></div>
+						<div class="layui-unselect layui-form-checkbox allpie" lay-skin=""><span>查看全部</span><i class="layui-icon layui-icon-ok"></i></div>
+						<div class="layui-inline">
+							<div class="layui-input-inline">
+								<input class="layui-input" id="errpieDate" placeholder="选择时间" type="text" readonly="readonly">
+							</div>
+						</div>
+						<div class="layui-unselect layui-form-checkbox chosepie" lay-skin=""><span>搜索</span><i class="layui-icon layui-icon-ok"></i></div>
+					</div>
+				</blockquote>
+				<div id="topnocon"class="hide">
+					<div class="magt30" style="height: 200px;width: 100%;padding-bottom: 30px;">
+						<img src="../../images/nores.png" style="display: block;height: 164px;margin: 0 auto 10px;" />
+						<p class="layui-center" style="font-size: 18px;font-weight: bold;line-height: 20px;">您选择的时间，暂无错误信息</p>
+					</div>
+				</div>
+				<div id="toppiecon">
+					<div class="layui-row">
+						<div id="highPhone" class="magt30 pull-left" style="height: 200px;"></div>
+						<div id="highUser" class="magt30 pull-left" style="float： left;height: 200px;"></div>
+						<div id="highUserNone" class="magt30 hide pull-left" style="float： left;height: 200px;">
+							<img src="../../images/nores.png" style="display: block;height: 164px;margin: 0 auto 10px;" />
+							<p class="layui-center" style="font-size: 18px;font-weight: bold;line-height: 20px;">暂无用户信息</p>
+						</div>
+						<!--<div id="highPhone" class="layui-col-md4" style="height: 200px;">
+						<div id="emessbox-p" class="layui-col-md6 emessbox"></div>
+						<div id="emessbox-u" class="layui-col-md6 emessbox"></div>
+					</div>-->
+						<div id="emessbox-p" class="layui-col-md3 emessbox">
+							<div class="layui-row">
+								<div class="todayerr">今日错误日志数量：<span></span>次</div>
+							</div>
+						</div>
+						<div id="emessbox-u" class="layui-col-md3 emessbox"></div>
+					</div>
+					
+				</div>
+				<div class="layui-row">
+					<div id="eList" class="layui-col-md12" style="height: 300px;"></div>
+				</div>
+				<blockquote class="layui-elem-quote quoteBox">
+					<form>
+						<div class="layui-inline">
+							<div id="phoneChoose" class="layui-inline">
+								<label class="layui-form-label">设备型号</label>
+								<div class="layui-input-inline">
+									<select id="highPsel" name="highPsel"></select>
+								</div>
+							</div>
+							<div id="userChoose" class="layui-inline">
+								<label class="layui-form-label">高频用户</label>
+								<div class="layui-input-inline">
+									<select id="highUsel" name="highUsel"></select>
+								</div>
+							</div>
+	
+							<div class="layui-inline">
+								<label class="layui-form-label">日期范围</label>
+								<div class="layui-input-inline">
+									<input class="layui-input" id="errorDate" placeholder="选择时间" type="text">
+								</div>
+							</div>
+	
+							<a class="layui-btn errsearch_btn" data-type="reload">搜索</a>
+						</div>
+						<div class="layui-inline">
+							<button type="reset" class="layui-btn layui-btn-normal errclear_btn">重置列表</button>
+						</div>
+						<div class="layui-inline">
+							<a class="layui-btn layui-btn-danger layui-btn-normal overDel_btn">逾期删除</a>
+						</div>
+					</form>
+				</blockquote>
+
+			</form>
+			<table id="errorList" lay-filter="errorList"></table>
+			<div id="elstaa"></div>
+			<script type="text/html" id="errorListbar">
+				<a class="layui-btn layui-btn-xs" lay-event="errorOpen">打开</a>
+				<a class="layui-btn layui-btn-xs" lay-event="watchMore">查看详情</a>
+			</script>
+			
+		</div>
+		<div class="nohasInfo" style="display: none;">
+			<div>
+				<img src="../../images/noinfo.png" style="display: block;margin: 20px auto 0;" />
+			</div>
+		</div>
+		<script type="text/javascript" src="../../layui/layui.all.js"></script>
+		<script type="text/javascript" src="../../js/jquery-2.1.0.js"></script>
+		<script type="text/javascript" src="../../js/HttpUrl.js"></script>
+		<script type="text/javascript" src="../../echarts/echarts.common.min.js"></script>
+		<script type="text/javascript" src="error.js"></script>
+		<script type="text/javascript" src="../../js/chart/chartOpt.js" ></script>
+	</body>
+
+</html>

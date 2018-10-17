@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.geostar.georobox.management.module.apkup.dao.ApkInfoBeanMapper">
+  <resultMap id="BaseResultMap" type="com.geostar.georobox.management.module.apkup.model.ApkInfoBean">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="APK_NAME" jdbcType="VARCHAR" property="apkName" />
+    <result column="APK_VERSION" jdbcType="VARCHAR" property="apkVersion" />
+    <result column="APK_VERSION_CODE" jdbcType="VARCHAR" property="apkVersionCode" />
+    <result column="APK_DESCRIBE" jdbcType="VARCHAR" property="apkDescribe" />
+    <result column="APK_ICON_URL" jdbcType="VARCHAR" property="apkIconUrl" />
+    <result column="APK_UPLOAD_INFO" jdbcType="VARCHAR" property="apkUploadInfo" />
+    <result column="APK_DESCRIBE_IMAGE" jdbcType="VARCHAR" property="apkDescribeImage" />
+    <result column="APK_URL" jdbcType="VARCHAR" property="apkUrl" />
+    <result column="APK_PACKAGENAME" jdbcType="VARCHAR" property="apkPackagename" />
+    <result column="DOWNLOAD_NUM" jdbcType="DECIMAL" property="downloadNum" />
+    <result column="APK_SIZE" jdbcType="VARCHAR" property="apkSize" />
+    <result column="MASTUPLOAD" jdbcType="DECIMAL" property="mastupload" />
+    <result column="DATETIME" jdbcType="TIMESTAMP" property="datetime" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.geostar.georobox.management.module.apkup.model.ApkInfoBean">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="APK_NAME" jdbcType="VARCHAR" property="apkName" />
+    <result column="APK_VERSION" jdbcType="VARCHAR" property="apkVersion" />
+    <result column="APK_VERSION_CODE" jdbcType="VARCHAR" property="apkVersionCode" />
+    <result column="APK_DESCRIBE" jdbcType="VARCHAR" property="apkDescribe" />
+    <result column="APK_ICON_URL" jdbcType="VARCHAR" property="apkIconUrl" />
+    <result column="APK_UPLOAD_INFO" jdbcType="VARCHAR" property="apkUploadInfo" />
+    <result column="APK_DESCRIBE_IMAGE" jdbcType="VARCHAR" property="apkDescribeImage" />
+    <result column="APK_URL" jdbcType="VARCHAR" property="apkUrl" />
+    <result column="APK_PACKAGENAME" jdbcType="VARCHAR" property="apkPackagename" />
+    <result column="DOWNLOAD_NUM" jdbcType="DECIMAL" property="downloadNum" />
+    <result column="APK_SIZE" jdbcType="VARCHAR" property="apkSize" />
+    <result column="MASTUPLOAD" jdbcType="DECIMAL" property="mastupload" />
+    <result column="DATETIME" jdbcType="TIMESTAMP" property="datetime" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.geostar.georobox.management.module.apkup.model.ApkInfoBean">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="INFO_USER" jdbcType="VARCHAR" property="infoUser" />
+    <result column="INFO_BACK" jdbcType="VARCHAR" property="infoBack" />
+    <result column="INFO_BACK_URL" jdbcType="VARCHAR" property="infoBackUrl" />
+    <result column="INFO_MODE" jdbcType="VARCHAR" property="infoMode" />
+    <result column="INFO_APPINFO" jdbcType="VARCHAR" property="infoAppinfo" />
+    <result column="INFO_OTHER" jdbcType="VARCHAR" property="infoOther" />
+    <result column="DATETIME" jdbcType="TIMESTAMP" property="datetime" />
+  </resultMap>
+</mapper>

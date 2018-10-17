@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.geostar.georobox.management.module.serverurl.dao.ServerUrlBeanMapper">
+  <resultMap id="BaseResultMap" type="com.geostar.georobox.management.module.serverurl.model.ServerUrlBean">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="SERVER_NAME" jdbcType="VARCHAR" property="serverName" />
+    <result column="SERVER_URL" jdbcType="VARCHAR" property="serverUrl" />
+    <result column="SERVER_DIS" jdbcType="VARCHAR" property="serverDis" />
+    <result column="IS_OPEN" jdbcType="DECIMAL" property="isOpen" />
+    <result column="DATETIME" jdbcType="TIMESTAMP" property="datetime" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.geostar.georobox.management.module.serverurl.model.ServerUrlBean">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="SERVER_NAME" jdbcType="VARCHAR" property="serverName" />
+    <result column="SERVER_URL" jdbcType="VARCHAR" property="serverUrl" />
+    <result column="SERVER_DIS" jdbcType="VARCHAR" property="serverDis" />
+    <result column="DATETIME" jdbcType="TIMESTAMP" property="datetime" />
+    <result column="URL_ID" jdbcType="VARCHAR" property="urlId" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.geostar.georobox.management.module.serverurl.model.ServerUrlBean">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="SERVER_NAME" jdbcType="VARCHAR" property="serverName" />
+    <result column="SERVER_URL" jdbcType="VARCHAR" property="serverUrl" />
+    <result column="SERVER_DIS" jdbcType="VARCHAR" property="serverDis" />
+    <result column="DATETIME" jdbcType="TIMESTAMP" property="datetime" />
+    <result column="URL_ID" jdbcType="VARCHAR" property="urlId" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.geostar.georobox.management.module.serverurl.model.ServerUrlBean">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="SERVER_NAME" jdbcType="VARCHAR" property="serverName" />
+    <result column="SERVER_URL" jdbcType="VARCHAR" property="serverUrl" />
+    <result column="SERVER_DIS" jdbcType="VARCHAR" property="serverDis" />
+    <result column="DATETIME" jdbcType="TIMESTAMP" property="datetime" />
+    <result column="URL_ID" jdbcType="VARCHAR" property="urlId" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.geostar.georobox.management.module.serverurl.model.ServerUrlBean">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="SERVER_NAME" jdbcType="VARCHAR" property="serverName" />
+    <result column="SERVER_URL" jdbcType="VARCHAR" property="serverUrl" />
+    <result column="SERVER_DIS" jdbcType="VARCHAR" property="serverDis" />
+    <result column="DATETIME" jdbcType="TIMESTAMP" property="datetime" />
+    <result column="URL_ID" jdbcType="VARCHAR" property="urlId" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.geostar.georobox.management.module.serverurl.model.ServerUrlBean">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="SERVER_NAME" jdbcType="VARCHAR" property="serverName" />
+    <result column="SERVER_URL" jdbcType="VARCHAR" property="serverUrl" />
+    <result column="SERVER_DIS" jdbcType="VARCHAR" property="serverDis" />
+    <result column="DATETIME" jdbcType="TIMESTAMP" property="datetime" />
+    <result column="URL_ID" jdbcType="VARCHAR" property="urlId" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.geostar.georobox.management.module.serverurl.model.ServerUrlBean">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="DECIMAL" property="id" />
+    <result column="SERVER_NAME" jdbcType="VARCHAR" property="serverName" />
+    <result column="SERVER_URL" jdbcType="VARCHAR" property="serverUrl" />
+    <result column="SERVER_DIS" jdbcType="VARCHAR" property="serverDis" />
+    <result column="DATETIME" jdbcType="TIMESTAMP" property="datetime" />
+    <result column="URL_ID" jdbcType="VARCHAR" property="urlId" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>朋友圈系统管理</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../css/font-awesome/css/font-awesome.css" />
+		<link rel="stylesheet" href="../../css/public.css" media="all" />
+	</head>
+
+	<body class="childrenBody">
+		<!--无数据-->
+		<div class="nocircle hide">
+			<img src="../../images/noinfo.png" style="display: block;margin: 0 auto;" />
+			<button type="button" class="layui-btn goupcircle" style="margin: 0 auto;display: block;">发布系统朋友圈</button>
+		</div>
+		<div class="layui-row layui-col-space50 fribox">
+			<form class="layui-col-xs12 layui-col-md3 layedit-tool-fixed">
+				<div>
+					<label class="layui-form-label friend-label" for="userName">用户设置</label>
+					<input id="userName" class="layui-input" placeholder="请输入用户名" name="userName" />
+				</div>
+				<div>
+					<label class="layui-form-label friend-label" for="time">日期设置</label>
+					<input id="time" class="layui-input" placeholder="请输入日期" name="time" />
+				</div>
+				<div class="layui-col-space20 magt30">
+					<div class="layui-col-xs6">
+						<a class="layui-btn search_btn layui-block">搜索</a>
+					</div>
+					<div class="layui-col-xs6">
+						<a class="layui-btn layui-btn-normal clear_btn layui-block">重置</a>
+					</div>
+				</div>
+				<!--发布按钮，完成-->
+				<!--<div class="layui-col-xs12">
+					<a class="layui-btn layui-block addnew">发布系统朋友圈</a>
+				</div>-->
+			</form>
+			<div class="layui-col-xs12 layui-col-md8 layui-col-md-offset3 circle-list">
+				<!--<div class="fr-show layui-clear layui-row layui-col-space20 style2">
+					<span class="fa fa-edit edit"></span>
+					<div class="pull-left user-head">
+						<img src="../../images/a6.jpg" />
+					</div>
+					<div class="fr-con">
+						<p class="fr-name"><span class="user">刘阳阳</span><span class="fr-time">14:30 2018-3-19</span></p>
+						<p class="fr-contxt">最后一条，第三条工作圈！！！哇！我发了一条工作圈。可以说是非常开心了！</p>
+						<div class="fr-imglist layui-clear magt10 layui-col-space10">
+							<img class="fr-img layui-col-xs3" layer-src="../../images/p_big1.jpg" src="../../images/p_big1.jpg" />
+							<img class="fr-img layui-col-xs3" layer-src="../../images/p_big2.jpg" src="../../images/p_big2.jpg" />
+							<img class="fr-img layui-col-xs3" layer-src="../../images/p_big3.jpg" src="../../images/p_big3.jpg" />
+						</div>
+						<div class="layui-clear">
+							<div class="layui-btn-group">
+								<button class="layui-btn layui-btn-primary zanbtn "><span class="fa fa-thumbs-o-up "></span><span class="zannum">312</span></button>
+								<button class="layui-btn layui-btn-primary plbtn"><span class="fa fa-twitch"></span>评论</button>
+								<button class="layui-btn layui-btn-primary fr-detele"><span class="fa fa-trash"></span>删除</button>
+							</div>
+						</div>
+					</div>
+					<div class="fr-reply">
+						<div class="triangle-up"></div>
+						<div class="fr-zanlist"></div>
+						<div class="fr-reply-list">
+							<p><span class="fr-user">user1</span>：非常好！<a class="replythis">回复</a><a class="delthis">删除</a></p>
+						</div>
+					</div>
+					<div class="replytxt layui-row">
+						<textarea class="layui-textarea"></textarea>
+						<button class="layui-btn replybtn">回复</button>
+						<button class="layui-btn closebtn">关闭</button>
+					</div>
+				</div>-->
+
+			</div>
+		</div>
+		
+		
+		<!--添加弹框-->
+		<div id="showupnew" class="hide">
+			<form class="layui-form edit-add-fr">
+				<textarea class="layui-block" placeholder="这一刻的想法..."></textarea>
+				<div class="layui-upload useupload">
+					<div class="imguplist imgupshowlist pull-left">
+						<div id="imgup" class="imgup pull-left">
+							<span class="fa fa-plus"></span>
+						</div>
+					</div>
+				</div>
+				<!--<div class="layui-form-item">
+					<label class="layui-form-label">选择访问权限</label>
+					<div class="layui-input-block">
+						<select name="city" lay-verify="required">
+							<option value="0">所有人可见</option>
+							<option value="1">仅自己可见</option>
+							<option value="2">部分人可见</option>
+						</select>
+					</div>
+				</div>-->
+				<div class="magt30">
+					<div class="showeditbtnbox">
+						<a class="layui-btn layui-btn-normal layui-layer-close layui-btn-danger layui-block upload-closenew-btn" style="position: relative;">取消</a>
+					</div>
+					<div class="showeditbtnbox">
+						<a class="layui-btn layui-block upload-btn uploadnew" style="position: relative;">发布</a>
+					</div>
+					
+				</div>
+			</form>
+		</div>
+		<!--编辑弹框-->
+		<div id="showedit" class="hide">
+			<form class="layui-form edit-add-fr">
+				<textarea class="layui-block" placeholder="这一刻的想法..."></textarea>
+				<div class="layui-upload usechange">
+					<div class="imguplist imgchangeshowlist pull-left">
+						<div id="changeimgup" class="imgup pull-left">
+							<span class="fa fa-plus"></span>
+						</div>
+					</div>
+				</div>
+				<!--<div class="layui-form-item">
+					<label class="layui-form-label">选择访问权限</label>
+					<div class="layui-input-block">
+						<select name="city" lay-verify="required">
+							<option value="0">所有人可见</option>
+							<option value="1">仅自己可见</option>
+							<option value="2">部分人可见</option>
+						</select>
+					</div>
+				</div>-->
+				<div class="magt30">
+					<div class="showeditbtnbox">
+						<a class="layui-btn layui-btn-normal layui-layer-close layui-btn-danger layui-block upload-closeedit-btn" style="position: relative;">取消</a>
+					</div>
+					<div class="showeditbtnbox">
+						<a class="layui-btn layui-block upload-btn uploadedit" style="position: relative;">发布</a>
+					</div>
+					
+				</div>
+			</form>
+		</div>
+		<div id="uploadboom" class="hide">
+			<p class="openboomp">确定要发布该条朋友圈么？</p>
+			<div class="layui-layer-btn layui-layer-btn-r">
+				<a id="upfirend" class="layui-layer-btn0">确定</a>
+				<a class="layui-layer-btn1">取消</a>
+			</div>
+		</div>
+		<div id="changeboom" class="hide">
+			<p class="openboomp">确定要修改该条朋友圈么？</p>
+			<div class="layui-layer-btn layui-layer-btn-r">
+				<a id="changefirend" class="layui-layer-btn0">确定</a>
+				<a class="layui-layer-btn1">取消</a>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../js/jquery-2.1.0.js"></script>
+		<script type="text/javascript" src="../../layui/layui.all.js"></script>
+		<script type="text/javascript" src="../../layui/layui.js"></script>
+		<script type="text/javascript" src="../../js/HttpUrl.js"></script>
+		<script type="text/javascript" src="friend-jq.js"></script>
+		<script type="text/javascript" src="friend.js"></script>
+
+	</body>
+
+</html>

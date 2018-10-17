@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="MysqlContext" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="com.geostar.georobox.management.common.utils.RbBaseMapper"/>
+        </plugin>
+
+        <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+                        connectionURL="jdbc:oracle:thin:@192.168.100.116:1521/ORCL"
+                        userId="wangsr"
+                        password="wangsr">
+        </jdbcConnection>
+
+        <!-- 对于生成的pojo所在包 -->
+        <javaModelGenerator targetPackage="com.geostar.georobox.management.module.openfire.model"
+        targetProject="src/main/java"/>
+
+		<!-- 对于生成的mapper所在目录 -->
+        <sqlMapGenerator targetPackage="com.geostar.georobox.management.module.openfire.dao.mappers" targetProject="src/main/java"/>
+
+		<!-- 配置mapper对应的java映射 -->
+        <javaClientGenerator targetPackage="com.geostar.georobox.management.module.openfire.dao" targetProject="src/main/java"
+                             type="XMLMAPPER"/>
+
+
+		<!-- 插件管理 -->
+		<!-- <table tableName="RB_PLUG" domainObjectName="PlugBean" ></table>
+		<table tableName="RB_PLUG_AUDIT" domainObjectName="PlugAuditBean" > </table>
+		<table tableName="RB_PLUG_CATEGORY" domainObjectName="PlugCategoryBean" > </table>
+ 		<table tableName="RB_PLUG_PREMISSION" domainObjectName="PlugPermissionBean" ></table>
+		<table tableName="RB_PLUG_USER" domainObjectName="PlugUserBean" > </table>  
+	 	<table tableName="RB_PLUG_AND_C" domainObjectName="PlugAndCategory" ></table> 
+		<table tableName="RB_PLUG_AND_P" domainObjectName="PlugAndPermission" ></table>  -->
+		 <!-- 即时通讯 -->
+		 <table tableName="TB_ZHOUSI_IM_REMIND" domainObjectName="ImRemindBean" ></table>
+		 <table tableName="TB_ZHOUSI_IM_ROOM_SPEAK" domainObjectName="ImRoomSpeakBean" ></table>
+		 <table tableName="TB_ZHOUSI_IM_ROOM_STATE" domainObjectName="ImRoomStateBean" ></table>
+		 <table tableName="TB_ZHOUSI_IM_TOP" domainObjectName="ImTopBean" ></table>
+		 <table tableName="TB_ZHOUSI_IM_USER" domainObjectName="ImUserBean" ></table>
+		 <table tableName="TB_ZHOUSI_IM_USER_NIKENAME" domainObjectName="ImUserNikeNameBean" ></table>
+		 
+		 
+    </context>
+</generatorConfiguration>

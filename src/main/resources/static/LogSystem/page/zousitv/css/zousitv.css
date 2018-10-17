@@ -1,0 +1,72 @@
+html, body{height: 100%;position: relative;}
+
+/**/
+.tvhead{position: relative;}
+.tvhead h2{text-align: center;}
+.tvheadtips{position: absolute;right: 0;top: 0;line-height: 30px;}
+.tvhead p{line-height: 30px;}
+.lastreloadtime{margin: 0 20px;float: left;line-height: 30px;}
+.reload_btn{float: left;margin-right: 20px;font-size: 20px;line-height: 30px;color: #1ab394;}
+.autoreload{height: 22px;line-height: 21px;margin-right: 10px;padding-right: 22px;}
+.autoreload span{padding: 0 4px;font-size: 12px;line-height: 24px;}
+.autoreload i{width: 24px;}
+.layui-form-checkbox i{font-size: 12px;height: 20px;}
+/*.applylist div{width: 100%;}*/
+
+.tvbody{margin-top: 10px;overflow-x: scroll;overflow-y: hidden;box-sizing: border-box;height: 600px;width: 100%;}
+.bgimg{width: 100%;height: 100%;position: absolute;left: 0;right: 0;top: 0;bottom: 0;z-index: -1;}
+.tvlist{height: 98%;overflow: hidden;}
+.tvbox{position: relative;height: 100%;overflow-x: hidden;overflow-y: hidden;box-sizing: border-box;float: left;margin: 0 20px 0 0;width: 550px;height: 100%;border: 1px solid #ddd;}
+.tvbox-tit{box-sizing: border-box;position: absolute;right: 0;top: 0;left: 0;bottom: 0;width: 100%;background: #fff;height: 50px;padding: 5px 10px;z-index: 1;border-bottom: 2px solid #1ab394;}
+.tvbox-tit h2{max-width: 250px;float: left;padding-right: 150px;font-size: 18px;line-height: 40px; overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+.tvbox-tit-btnlist{position: absolute;right: 0;top: 10px;width: 150px;height: 38px;}
+.tvbox-tit-btnlist button{float: right;margin-right: 10px;}
+.tvbox-con{position: relative; box-sizing: border-box; padding: 60px 0 40px;height: 100%;overflow-x: hidden;overflow-y: hidden;}
+.scrollcon{padding: 0 10px;position: relative;height: 100%;overflow-y: auto;overflow-x: hidden;}
+.tvclass{overflow: hidden;margin: 30px auto 20px;}
+.tvclassbox{float: left;width: 33.333333333%;position: relative;}
+.tvclassbox::after{content: "";display: block;position: absolute;right: 0;top: 15%; width: 2px;height: 70%;background: #ddd;}
+.tvclassbox.tvclass3::after{display: none;}
+.tvclassbox p{text-align: center;font-size: 30px;font-weight: bold;line-height: 32px;}
+.tvclassbox h3{text-align: center;line-height: 32px;}
+.tvclass1 p, .tvclass1 h3{color: #1ab394;}
+.tvclass2 p, .tvclass2 h3{color: #ed5565;}
+.tvclass3 p, .tvclass3 h3{color: #23c6c8;}
+.layui-table[lay-size=sm] td, .layui-table[lay-size=sm] th {
+    font-size: 12px;
+    padding: 5px;
+}
+table tr td{overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+table tr td:nth-child(1){max-width: 80px;}
+table tr td:nth-child(2){max-width: 80px;}
+table tr td:nth-child(3){max-width: 115px;}
+table tr td:nth-child(4){max-width: 80px;}
+table tr td:nth-child(5){max-width: 115px;}
+
+/*添加新zousi*/
+.addzousi{position: relative;}
+.addbox{position: absolute;left: 50%;margin-left: -100px;top: 50%;margin-top: -120px; width: 200px;height: 240px;cursor: pointer;}
+.addbox img{width: 200px;height: 200px;}
+.addbox p{line-height: 40px;text-align: center;font-size: 24px;font-weight: bold;}
+
+.addzousi{padding: 15px;}
+.addzousimsg{margin-top: 80px;}
+.addzousi .layui-form-label{padding: 9px 5px;width: 100px;}
+.addzousi h3{margin-bottom: 20px;font-size: 24px;font-weight: bold;line-height: 48px;}
+.addmsg-btnlist{float: right;margin: 5px 0 0 0;}
+.addmsg-btnlist button{width: 100px;}
+
+
+/*nomsg*/
+.nomsg{width: 320px;height: 362px;position: absolute;left: 50%;margin-left: -160px;top: 50%;margin-top: -181px;}
+.nomsg img{display: block;width: 320px;height: 362px;}
+
+
+.toseemore{text-align: right;}
+.toseemore .gotoZS{font-size: 16px;margin: 10px;cursor: pointer;color: #1ab394;}
+
+
+/*404*/
+.errajax{width: 200px;height: 240px;position: absolute;left: 50%;margin-left: -100px;top: 50%;margin-top: -120px;}
+.errajax img{display: block;width: 200px;}
+.errajax p{display: block;width: 200px;font-size: 18px;line-height: 30px;font-weight: bold;margin-top: 10px;text-align: center;}

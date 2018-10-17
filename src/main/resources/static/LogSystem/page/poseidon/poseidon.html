@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>波塞冬系统</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../js/webuploader/webuploader.css" />
+		<link rel="stylesheet" href="../../css/font-awesome/css/font-awesome.css" />
+		<link rel="stylesheet" href="../../css/public.css" media="all" />
+		<link rel="stylesheet" href="../../css/poseidon.css" />
+	</head>
+
+	<body class="childrenBody" style="overflow-x: hidden;overflow-y: hidden;">
+		<div class="">
+			<blockquote class="layui-elem-quote quoteBox">
+				<form class="layui-form">
+					<label style="font-size: 20px;font-weight: bold;">波塞冬系统</label>
+					<ul class="layui-inline layui-nav" lay-filter="" style="background: transparent;">
+						<li class="layui-nav-item">
+							<a class="layui-btn" href="javascript:;">上传插件</a>
+							<dl class="layui-nav-child">
+								<!-- 二级菜单 -->
+								<dd>
+									<a class="addnewpsd addnewpsd_apk" href="javascript:;">发布APK插件</a>
+								</dd>
+								<dd>
+									<a class="addnewpsd addnewpsd_link" href="javascript:;">发布链接插件</a>
+								</dd>
+								<dd>
+									<a class="addnewpsd addnewpsd_zip" href="javascript:;">发布文件插件</a>
+								</dd>
+							</dl>
+						</li>
+					</ul>
+					<div class="layui-inline">
+						<a class="layui-btn layui-btn-normal switch">审核插件</a>
+					</div>
+					<div class="pull-right search_box">
+						<div class="layui-inline">
+							<div class="layui-input-inline" style="width: 180px;">
+								<input type="text" class="layui-input searchVal" placeholder="请输入插件名称或包名" />
+							</div>
+							<a class="layui-btn search_btn" data-type="reload" lay-filter="search" lay-submit="">搜索插件</a>
+						</div>
+						<div class="layui-inline hide">
+							<div class="layui-input-inline">
+								<input type="text" class="layui-input searchVal" placeholder="请输入搜索的内容" />
+							</div>
+							<a class="layui-btn search_btn" data-type="reload" lay-filter="search" lay-submit="">搜索插件</a>
+						</div>
+						<div class="layui-inline">
+							<button type="reset" class="layui-btn layui-btn-normal clear_btn">重置列表</button>
+						</div>
+					</div>
+				</form>
+			</blockquote>
+			<!--插件图表-->
+			<div class="layui-row layui-col-space30">
+				<div class="layui-col-md12 plugbox">
+					<blockquote class="layui-elem-quote title">插件列表</blockquote>
+					<table id="pluglist" class="magt0" lay-filter="pluglist"></table>
+				</div>
+				<div class="layui-col-md12 verifierbox">
+					<blockquote class="layui-elem-quote title">审核列表</blockquote>
+					<table id="verifierlist" class="magt0" lay-filter="verifierlist"></table>
+				</div>
+				<div class="righttable">
+					<div class="rightbtnlist">
+						<button class="layui-btn rightbtn categoryshow">分<br />类<br />管<br />理</button>
+						<button class="layui-btn rightbtn jurisdictionshow">权<br />限<br />管<br />理</button>
+					</div>
+					<div>
+						<p style="text-align: right;">
+							<i class="layui-icon closeright" class="pull-right" style="font-size: 30px !important; color: #23262e;font-weight: bold;cursor: pointer;">&#x1006;</i>
+						</p>
+						<div class="layui-row categorybox">
+
+							<blockquote class="layui-elem-quote title">
+								分类管理
+								<div class="layui-inline pull-right magr15">
+									<a class="layui-btn layui-btn-xs layui-btn-normal addcategory">添加分类</a>
+								</div>
+							</blockquote>
+							<table id="categorylist" class="magt0" lay-filter="categorylist"></table>
+						</div>
+						<div class="layui-row jurisdictionbox">
+							<blockquote class="layui-elem-quote title">
+								权限管理
+								<div class="layui-inline pull-right magr15">
+									<a class="layui-btn layui-btn-xs layui-btn-normal addjurisdiction">添加权限</a>
+								</div>
+							</blockquote>
+							<table id="jurisdiction" class="magt0" lay-filter="jurisdiction"></table>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!--分类列表操作列表-->
+		<script type="text/html" id="categorylistBar">
+			<a class="layui-btn layui-btn-xs layui-btn-warm" lay-event="change">修改</a>
+			<a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除</a>
+		</script>
+		<!--权限列表操作列表-->
+		<script type="text/html" id="jurisdictionlistBar">
+			<a class="layui-btn layui-btn-xs layui-btn-warm" lay-event="change">修改</a>
+			<a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除</a>
+		</script>
+		<!--添加分类弹框-->
+		<div id="addcategory" class="longlabel hide">
+			<form class="layui-form">
+				<div class="layui-form-item">
+					<label class="layui-form-label">分类名称：</label>
+					<div class="layui-input-block">
+						<input type="text" required lay-verify="required" placeholder="请输入分类名称" autocomplete="off" class="layui-input engtxt">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">分类详情：</label>
+					<div class="layui-input-block">
+						<input type="text" required lay-verify="required" placeholder="请输入分类详情" autocomplete="off" class="layui-input txt">
+					</div>
+				</div>
+			</form>
+		</div>
+		<!--添加权限弹框-->
+		<div id="addjurisdiction" class="longlabel hide">
+			<form class="layui-form">
+				<div class="layui-form-item">
+					<label class="layui-form-label">权限名称：</label>
+					<div class="layui-input-block">
+						<input type="text" required lay-verify="required" placeholder="请输入权限名称" autocomplete="off" class="layui-input engtxt">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">权限详情：</label>
+					<div class="layui-input-block">
+						<input type="text" required lay-verify="required" placeholder="请输入权限详情" autocomplete="off" class="layui-input txt">
+					</div>
+				</div>
+			</form>
+		</div>
+		<!--插件列表详情-->
+		<table id="plusdetails" class="layui-table" lay-even></table>
+
+		<!--上传插件弹框-->
+		<form id="upplugform" class="layui-form apk-uploadbox hide" lay-filter="upplugform" style="padding: 20px;">
+			<div class="layui-row">
+				<!--上传apk-->
+				<div id="uploadfile" class="plug_apk addshow">
+					<label class="layui-form-label friend-label" for=""><span>*</span>文件上传</label>
+					<!--用来存放文件信息-->
+					<div class="layui-form-item apkup">
+						<div class="layui-input-block">
+							<input id="pluguploadval" name="title" required="" lay-verify="required" placeholder="选择上传文件" autocomplete="off" class="layui-input" type="text" readonly="readonly">
+						</div>
+						<div id="plugupload" type="button" class="layui-btn layui-col-xs3">文件上传</div>
+					</div>
+				</div>
+
+				<div id="uploadfile2" class="plug_apk changeshow">
+					<label class="layui-form-label friend-label" for=""><span>*</span>文件上传</label>
+					<!--用来存放文件信息-->
+					<div class="layui-form-item apkup">
+						<div class="layui-input-block">
+							<input id="pluguploadval2" name="title" required="" lay-verify="required" placeholder="选择上传文件" autocomplete="off" class="layui-input" type="text" readonly="readonly">
+						</div>
+						<div id="plugupload2" type="button" class="layui-btn layui-col-xs3">文件上传</div>
+					</div>
+				</div>
+				<!--上传apk-->
+				
+				<div>
+					<label class="layui-form-label friend-label" for=""><span>*</span>ICON上传</label>
+					<div class="layui-form-item apkup apkupicon">
+						<div class="layui-input-block">
+							<input id="plugiconuploadval" name="title" required="" lay-verify="required" placeholder="选择上传APK图标" autocomplete="off" class="layui-input" type="text" readonly="readonly">
+						</div>
+						<button id="plugiconupload" type="button" class="layui-btn layui-col-xs3">上传ICON</button>
+					</div>
+				</div>
+				<div>
+					<label class="layui-form-label friend-label" for=""><span>*</span>插件名称</label>
+					<input id="plugName" class="layui-input" placeholder="请输入插件名称" />
+				</div>
+				<div class="plug_link">
+					<label class="layui-form-label friend-label" for=""><span>*</span>插件地址</label>
+					<input id="plugAddr" class="layui-input" placeholder="请输入插件地址" />
+				</div>
+				<div class="plug_apk">
+					<label class="layui-form-label friend-label" for=""><span>*</span>PackageName</label>
+					<input id="plugPackageName" class="layui-input" placeholder="请输入包名" />
+				</div>
+				<div class="plug_apk">
+					<label class="layui-form-label friend-label" for=""><span>*</span>LauncherActivity</label>
+					<input id="LauncherActivity" class="layui-input" placeholder="请输入LauncherActivity" />
+				</div>
+				<!--<div>
+					<label class="layui-form-label friend-label" for=""><span>*</span>VersionCode</label>
+					<input id="versionCode" class="layui-input" placeholder="请输入版本号" />
+				</div>-->
+				<div>
+					<label class="layui-form-label friend-label" for="">插件详情</label>
+					<textarea id="plugInfo" class="layui-textarea" placeholder="请输入插件详情"></textarea>
+				</div>
+				<div class="layui-form-item" pane="">
+					<label class="layui-form-label friend-label" for="">分类选择</label>
+					<div id="categorychose" class="layui-input-block" style="margin-left: 0;"></div>
+				</div>
+				<div class="layui-form-item" pane="">
+					<label class="layui-form-label friend-label" for="">权限选择</label>
+					<div id="jurisdictionchose" class="layui-input-block" style="margin-left: 0;"></div>
+				</div>
+				<div class="layui-form-item plug_apk" pane="">
+					<input id="isSystem" name="" title="是否调用系统方法安装" type="checkbox" lay-filter="isSystem">
+				</div>
+
+				<div class="layui-row magt30 psdupbtn">
+					<button type="reset" class="layui-btn layui-col-xs5 resetapk" style="margin-left: 0 !important;">重置表单</button>
+					<a class="layui-btn layui-col-xs5 layui-col-xs-offset2 newplugup plug_link" style="margin-left: 16.66666667%;">确认上传</a>
+					<a class="layui-btn layui-col-xs5 layui-col-xs-offset2 newplugup plug_apk hide" style="margin-left: 16.66666667%;">确认上传</a>
+					<a class="layui-btn layui-col-xs5 layui-col-xs-offset2 newplugup plug_zip hide" style="margin-left: 16.66666667%;">确认上传</a>
+				</div>
+				<div class="layui-row magt30 psdchangebtn hide">
+					<button type="reset" class="layui-btn layui-col-xs5 resetapk" style="margin-left: 0 !important;">重置表单</button>
+					<a class="layui-btn layui-col-xs5 layui-col-xs-offset2 changeplug plug_link" style="margin-left: 16.66666667%;">确认修改</a>
+					<a class="layui-btn layui-col-xs5 layui-col-xs-offset2 changeplug plug_apk hide" style="margin-left: 16.66666667%;">确认修改</a>
+					<a class="layui-btn layui-col-xs5 layui-col-xs-offset2 changeplug plug_zip hide" style="margin-left: 16.66666667%;">确认修改</a>
+				</div>
+			</div>
+		</form>
+		<!--上传弹框-->
+		<div id="plugupboom" class="hide" style="padding: 15px;">
+			<p class="apkupboomtit">是否确认上传该插件</p>
+			<p class="upload-state"></p>
+			<div class="layui-progress layui-progress-big" lay-filter="demo" lay-showPercent="true">
+				<div class="layui-progress-bar" lay-percent="0%">
+				</div>
+			</div>
+			<div class="apkupboombtn" class="layui-row">
+				<button id="apkboomStop" class="layui-col-xs3 layui-btn layui-btn-danger pull-right">取消</button>
+				<button id="apkboomSure" class="layui-col-xs3 layui-btn pull-right">确认</button>
+			</div>
+		</div>
+		<!--修改弹框-->
+		<div id="plugchangeboom" class="hide" style="padding: 15px;">
+			<p class="apkupboomtit">是否确认修改该插件</p>
+			<p class="upload-state"></p>
+			<div class="layui-progress layui-progress-big" lay-filter="demo2" lay-showPercent="true">
+				<div class="layui-progress-bar" lay-percent="0%">
+				</div>
+			</div>
+			<div class="apkupboombtn" class="layui-row">
+				<button id="apkchangeStop" class="layui-col-xs3 layui-btn layui-btn-danger pull-right" style="margin-left: 15px;">取消</button>
+				<button id="apkchangeSure" class="layui-col-xs3 layui-btn pull-right">确认</button>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../layui/layui.all.js"></script>
+		<script type="text/javascript" src="../../js/jquery-2.1.0.js"></script>
+		<script type="text/javascript" src="../../js/webuploader/webuploader.min.js"></script>
+		<script type="text/javascript" src="../../js/HttpUrl.js"></script>
+		<script type="text/javascript" src="poseidon.js"></script>
+		<script type="text/javascript" src="addnewpsd.js"></script>
+
+	</body>
+
+</html>

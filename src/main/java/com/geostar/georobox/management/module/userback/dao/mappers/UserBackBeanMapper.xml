@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.geostar.georobox.management.module.userback.dao.UserBackBeanMapper" >
+  <resultMap id="BaseResultMap" type="com.geostar.georobox.management.module.userback.model.UserBackBean" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="INFO_USER" property="infoUser" jdbcType="VARCHAR" />
+    <result column="INFO_BACK" property="infoBack" jdbcType="VARCHAR" />
+    <result column="INFO_BACK_URL" property="infoBackUrl" jdbcType="VARCHAR" />
+    <result column="INFO_MODE" property="infoMode" jdbcType="VARCHAR" />
+    <result column="INFO_APPINFO" property="infoAppinfo" jdbcType="VARCHAR" />
+    <result column="INFO_OTHER" property="infoOther" jdbcType="VARCHAR" />
+    <result column="DATETIME" property="datetime" jdbcType="TIMESTAMP" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.geostar.georobox.management.module.openfire.dao.ImUserBeanMapper">
+  <resultMap id="BaseResultMap" type="com.geostar.georobox.management.module.openfire.model.ImUserBean">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="USER_ID" jdbcType="VARCHAR" property="userId" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="GENDER" jdbcType="VARCHAR" property="gender" />
+    <result column="TELPHONE" jdbcType="VARCHAR" property="telphone" />
+    <result column="DEPT_ID" jdbcType="VARCHAR" property="deptId" />
+    <result column="DEPT_NAME" jdbcType="VARCHAR" property="deptName" />
+    <result column="ICON" jdbcType="VARCHAR" property="icon" />
+    <result column="ZORDER" jdbcType="VARCHAR" property="zorder" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.geostar.georobox.management.module.openfire.model.ImUserBean">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="USER_ID" jdbcType="VARCHAR" property="userId" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="GENDER" jdbcType="VARCHAR" property="gender" />
+    <result column="TELPHONE" jdbcType="VARCHAR" property="telphone" />
+    <result column="DEPT_ID" jdbcType="VARCHAR" property="deptId" />
+    <result column="DEPT_NAME" jdbcType="VARCHAR" property="deptName" />
+    <result column="ICON" jdbcType="VARCHAR" property="icon" />
+    <result column="ZORDER" jdbcType="VARCHAR" property="zorder" />
+  </resultMap>
+</mapper>

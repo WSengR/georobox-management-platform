@@ -1,0 +1,72 @@
+{
+	"contentManagement": [
+		{
+			"title": "ZEUS电视机",
+			"icon": "fa-desktop",
+			"href": "page/zousitv/zousitv.html",
+			"spread": false
+		},
+		{
+			"title": "日志列表",
+			"icon": "fa-file-text-o",
+			"href": "page/news/newsList.html",
+			"spread": false
+		},
+		{
+			"title": "错误日志管理",
+			"icon": "fa-file-text",
+			"href": "page/error/errorList.html",
+			"spread": false
+		},
+		{
+			"title": "用户信息反馈",
+			"icon": "fa-pencil-square-o",
+			"href": "page/userBack/userBack.html",
+			"spread": false
+		},
+		{
+			"title": "APK发布与更新",
+			"icon": "fa-cloud-upload",
+			"href": "page/apkUpload/apkUpload.html",
+			"spread": false
+		},
+		{
+			"title": "波塞冬系统",
+			"icon": "fa-sitemap",
+			"href": "page/poseidon/poseidon.html",
+			"spread": false
+		},
+		{
+			"title": "配置资源管理",
+			"icon": "fa-list-alt",
+			"href": "page/deploy/deploy.html",
+			"spread": false
+		},
+		{
+			"title": "应用运行状态监测",
+			"icon": "fa-files-o",
+			"href": "page/applyState/applyState.html",
+			"spread": false
+		},
+		{
+			"title": "服务端信息配置",
+			"icon": "fa-cog",
+			"href": "page/serverConfig/serverConfig.html",
+			"spread": false
+		},
+		{
+			"title": "文档中心",
+			"icon": "fa-file-archive-o",
+			"href": "page/document/document.html",
+			"spread": false
+		},
+		{
+			"title": "评分管理",
+			"icon": "fa-star",
+			"href": "page/grade/grade.html",
+			"spread": false
+		}
+	]
+}
+
+

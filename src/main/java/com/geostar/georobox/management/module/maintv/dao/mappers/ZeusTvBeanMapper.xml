@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.geostar.georobox.management.module.maintv.dao.ZeusTvBeanMapper">
+  <resultMap id="BaseResultMap" type="com.geostar.georobox.management.module.maintv.model.ZeusTvBean">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="ZS_NAME" jdbcType="VARCHAR" property="zsName" />
+    <result column="ZS_SERVEURL" jdbcType="VARCHAR" property="zsServeurl" />
+    <result column="IS_OPEN" jdbcType="DECIMAL" property="isOpen" />
+    <result column="DATETIME" jdbcType="TIMESTAMP" property="datetime" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.geostar.georobox.management.module.maintv.model.ZeusTvBean">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="ZS_NAME" jdbcType="VARCHAR" property="zsName" />
+    <result column="ZS_SERVEURL" jdbcType="VARCHAR" property="zsServeurl" />
+    <result column="IS_OPEN" jdbcType="DECIMAL" property="isOpen" />
+  </resultMap>
+</mapper>

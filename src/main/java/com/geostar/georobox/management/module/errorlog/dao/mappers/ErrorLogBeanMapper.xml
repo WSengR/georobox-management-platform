@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.geostar.georobox.management.module.errorlog.dao.ErrorLogBeanMapper" >
+  <resultMap id="BaseResultMap" type="com.geostar.georobox.management.module.errorlog.model.ErrorLogBean" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="PHONE_MODE" property="phoneMode" jdbcType="VARCHAR" />
+    <result column="PHONE_VERSION" property="phoneVersion" jdbcType="VARCHAR" />
+    <result column="PHONE_MANUFACTURER" property="phoneManufacturer" jdbcType="VARCHAR" />
+    <result column="PHONE_MAC" property="phoneMac" jdbcType="VARCHAR" />
+    <result column="CODE_VERSIONNAME" property="codeVersionname" jdbcType="VARCHAR" />
+    <result column="CODE_VERSIONCODE" property="codeVersioncode" jdbcType="VARCHAR" />
+    <result column="APP_PACKAGENAME" property="appPackagename" jdbcType="VARCHAR" />
+    <result column="APP_NAME" property="appName" jdbcType="VARCHAR" />
+    <result column="LOG_URL" property="logUrl" jdbcType="VARCHAR" />
+    <result column="INFO" property="info" jdbcType="VARCHAR" />
+    <result column="USER_INFO" property="userInfo" jdbcType="VARCHAR" />
+    <result column="DATETIME" property="datetime" jdbcType="TIMESTAMP" />
+    <result column="IS_COMPLETED" property="isCompleted" jdbcType="DECIMAL" />
+    <result column="ERROR_INFO" property="errorInfo" jdbcType="VARCHAR" />
+  </resultMap>
+</mapper>

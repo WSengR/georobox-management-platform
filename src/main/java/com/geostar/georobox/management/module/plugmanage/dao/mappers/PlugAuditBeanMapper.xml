@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.geostar.georobox.management.module.plugmanage.dao.PlugAuditBeanMapper" >
+  <resultMap id="BaseResultMap" type="com.geostar.georobox.management.module.plugmanage.model.PlugAuditBean" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="PLUG_TEMP_ID" property="plugTempId" jdbcType="VARCHAR" />
+    <result column="PLUG_ID" property="plugId" jdbcType="VARCHAR" />
+    <result column="PLUG_NAME" property="plugName" jdbcType="VARCHAR" />
+    <result column="PLUG_TYPE" property="plugType" jdbcType="DECIMAL" />
+    <result column="PLUG_URL" property="plugUrl" jdbcType="VARCHAR" />
+    <result column="PLUG_ICON" property="plugIcon" jdbcType="VARCHAR" />
+    <result column="PLUG_PACKAGE" property="plugPackage" jdbcType="VARCHAR" />
+    <result column="PLUG_VERSIONCODE" property="plugVersioncode" jdbcType="VARCHAR" />
+    <result column="PLUG_DETAILS" property="plugDetails" jdbcType="VARCHAR" />
+    <result column="PLUG_SORT" property="plugSort" jdbcType="DECIMAL" />
+    <result column="PLUG_NEEDINSTALL" property="plugNeedinstall" jdbcType="DECIMAL" />
+    <result column="PLUG_PERMISSION" property="plugPermission" jdbcType="VARCHAR" />
+    <result column="PLUG_CATEGORY" property="plugCategory" jdbcType="VARCHAR" />
+    <result column="PLUS_LAUNCHER_ACTIVITY" property="plugLauncherActivity" jdbcType="VARCHAR" />
+  </resultMap>
+</mapper>

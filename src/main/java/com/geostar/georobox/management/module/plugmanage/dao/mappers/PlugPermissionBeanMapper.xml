@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.geostar.georobox.management.module.plugmanage.dao.PlugPermissionBeanMapper" >
+  <resultMap id="BaseResultMap" type="com.geostar.georobox.management.module.plugmanage.model.PlugPermissionBean" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="PERMISSION_ID" property="permissionId" jdbcType="VARCHAR" />
+    <result column="PERMISSION_NAME" property="permissionName" jdbcType="VARCHAR" />
+    <result column="PERMISSION_DES" property="permissionDes" jdbcType="VARCHAR" />
+  </resultMap>
+</mapper>

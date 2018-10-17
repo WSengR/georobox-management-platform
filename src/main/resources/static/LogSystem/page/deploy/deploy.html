@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>配置资源管理</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="content-disposition" content="attachment">
+		<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../css/font-awesome/css/font-awesome.css" />
+		<link rel="stylesheet" href="../../css/public.css" media="all" />
+	</head>
+
+	<body class="childrenBody" style="overflow-y: scroll;">
+
+		<div class="layui-row layui-col-space50">
+			<form class="layui-col-md3 layui-form">
+				<div>
+					<label class="layui-form-label deploy-label" for="deployName">资源名称（Name）</label>
+					<input id="deployName" class="layui-input" placeholder="请输入资源名称" name="deployName" />
+				</div>
+				<div>
+					<label class="layui-form-label deploy-label" for="deployPath">选择资源类型（Type）</label>
+					<div class="layui-form-item" style="margin-bottom: 0;">
+						<div class="layui-input-block" style="margin-left: 0;">
+							<select name="interest" lay-filter="deployclass">
+								<option value="pic" selected="selected">PIC</option>
+								<option value="xml">XML</option>
+								<option value="apk">APK</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="deploy_apk hide">
+					<label class="layui-form-label deploy-label" for="deployPack">资源包名（PackageName）</label>
+					<input id="deployPackageName" class="layui-input" placeholder="请输入资源包名" name="deployPack" />
+				</div>
+				<div>
+					<label class="layui-form-label deploy-label" for="deployPath">资源路径（NativePath）</label>
+					<!--onkeyup="value=value.replace(/[^\w\.\/]/ig,'')"-->
+					<input id="deployNativePath" class="layui-input" placeholder="请输入资源保存的本地路径" name="deployPath" />
+				</div>
+				<div>
+					<label class="layui-form-label deploy-label">资源文件上传（URL）</label>
+					<div class="layui-form-item apkup apkupicon">
+						<div class="layui-input-block">
+							<!--onkeyup="value=value.replace(/[^\w\.\/]/ig,'')"-->
+							<input id="deployuploadval" name="title" required="" lay-verify="required" placeholder="选择上传资源文件" autocomplete="off" class="layui-input" type="text">
+						</div>
+						<button id="deployupload" type="button" class="layui-btn layui-col-xs3">上传文件</button>
+					</div>
+				</div>
+				<div class="layui-col-space20 magt30">
+					<div class="layui-col-xs6">
+						<button class="layui-btn layui-block deployreset" type="reset">重置列表</button>
+					</div>
+					<div class="layui-col-xs6">
+						<a class="layui-btn layui-block adddeploy">上传配置资源</a>
+					</div>
+				</div>
+
+			</form>
+			<div class="layui-col-md9 circle-list">
+
+				<div>
+					<blockquote class="layui-elem-quote magt10">
+						<div class="layui-btn-group typechose" style="float: right;">
+							<a class="layui-btn showtable on"><i class="fa fa-table"></i></a>
+							<a class="layui-btn showlist"><i class="fa fa-list"></i></a>
+						</div>
+						<button class="layui-btn previewbtn" style="margin-left: 10px;">预览</button>
+						<button class="layui-btn dlxmlbtn">下载</button>
+					</blockquote>
+				</div>
+				<div class="typetable">
+					<table id="deployTable" class="magt0" lay-filter="deployTable"></table>
+				</div>
+				<div class="typelist hide">
+					<!--<div class="deploybox">
+						<div class="deployboxhead">
+							<img src="../../images/apkfile.png" />
+							<p class="deployname layui-center">资源名称</p>
+						</div>
+						<div class="deployfoot">
+							<div class="layui-btn-group">
+								<button class="layui-btn">编辑</button>
+								<button class="layui-btn layui-btn-danger">删除</button>
+							</div>
+						</div>
+						
+						<div class="showdet hide">
+							<p class="deployid">ID:15</p>
+							<p class="deployname layui-center">资源名称:资源名称</p>
+							<p class="deployaddr layui-center">资源地址:资源地址</p>
+							<p class="deploytype layui-center">资源类型</p>
+							<p class="deploypack layui-center">资源包名</p>
+							<p class="deploynath layui-center">资源本地路径</p>
+							<p class="deployver layui-center">资源版本号 </p>
+							<p class="deploytime layui-center">上传时间 </p>
+						</div>
+					</div>-->
+				</div>
+			</div>
+		</div>
+		<div id="deployboom" class="hide">
+			<p class="apkupboomtit">是否确认上传该配置资源信息</p>
+			<div class="apkupboombtn" class="layui-row">
+				<button id="deployboomStop" class="layui-col-xs3 layui-btn layui-btn-danger pull-right" style="margin-left: 15px;">取消</button>
+				<button id="deployboomSure" class="layui-col-xs3 layui-btn pull-right">确认</button>
+			</div>
+		</div>
+		<script type="text/html" id="deployListBar">
+			<a class="layui-btn layui-btn-xs" lay-event="change">修改</a>
+			<a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除</a>
+		</script>
+
+		<!--点击预览弹框-->
+		<div class="preview hide">
+			<pre id="pre" class="layui-code previewcon" lay-skin="notepad">
+				
+			</pre>
+		</div>
+
+		<!--点击修改弹框-->
+		<div class="deployChange hide" style="padding: 10px 20px 0;">
+			<div>
+				<label class="layui-form-label deploy-label" for="deployPath">资源类型（Type）</label>
+				<input id="editdeployType" class="layui-input" placeholder="请输入资源名称" value="PIC" disabled="disabled" readonly="readonly" />
+			</div>
+			<div>
+				<label class="layui-form-label deploy-label" for="deployName">资源名称（Name）</label>
+				<input id="editdeployName" class="layui-input" placeholder="请输入资源名称" name="editdeployName" />
+			</div>
+			
+			<div class="deploy_apk hide">
+				<label class="layui-form-label deploy-label" for="deployPack">资源包名（PackageName）</label>
+				<input id="editdeployPackageName" class="layui-input" placeholder="请输入资源包名" name="editdeployPack" />
+			</div>
+			<div>
+				<label class="layui-form-label deploy-label" for="deployPath">资源路径（NativePath）</label>
+				<!--onkeyup="value=value.replace(/[^\w\.\/]/ig,'')"-->
+				<input id="editdeployNativePath" class="layui-input" placeholder="请输入资源保存的本地路径" name="deployPath" />
+			</div>
+			<div>
+				<label class="layui-form-label deploy-label">资源文件上传（URL）</label>
+				<div class="layui-form-item apkup apkupicon">
+					<div class="layui-input-block">
+						<!--onkeyup="value=value.replace(/[^\w\.\/]/ig,'')"-->
+						<input id="editdeployuploadval" name="title" required="" lay-verify="required" placeholder="选择上传资源文件" autocomplete="off" class="layui-input" type="text">
+					</div>
+					<button id="editdeployupload" type="button" class="layui-btn layui-col-xs3">上传文件</button>
+				</div>
+			</div>
+			<div class="layui-col-space20 magt10">
+				<div class="layui-col-xs6">
+					<a class="layui-btn layui-block editdeploy">修改配置资源</a>
+				</div>
+				<div class="layui-col-xs6">
+					<button class="layui-btn layui-block layui-btn-danger closedeploy">关闭</button>
+				</div>
+				
+			</div>
+		</div>
+		<div id="editdeployboom" class="hide">
+			<p class="apkupboomtit">是否确认修改该配置资源信息</p>
+			<div class="layui-row" style="margin-top: 20px;">
+				<button id="deployboomStop" class="layui-col-xs3 layui-btn layui-btn-danger pull-right" style="margin-left: 15px;">取消</button>
+				<button id="editdeployboomSure" class="layui-col-xs3 layui-btn pull-right">确认</button>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../layui/layui.all.js"></script>
+		<script type="text/javascript" src="../../js/jquery-2.1.0.js"></script>
+		<script type="text/javascript" src="../../js/HttpUrl.js"></script>
+		<script type="text/javascript" src="deploy.js"></script>
+
+	</body>
+
+</html>

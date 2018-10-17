@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.geostar.georobox.management.module.friend.dao.FriendFavorBeanMapper">
+  <resultMap id="BaseResultMap" type="com.geostar.georobox.management.module.friend.model.FriendFavorBean">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="FAVORTER_ID" jdbcType="VARCHAR" property="favorterId" />
+    <result column="ITEM_ID" jdbcType="VARCHAR" property="itemId" />
+    <result column="USER_ID" jdbcType="VARCHAR" property="userId" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.geostar.georobox.management.module.friend.model.FriendFavorBean">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="FAVORTER_ID" jdbcType="VARCHAR" property="favorterId" />
+    <result column="ITEM_ID" jdbcType="VARCHAR" property="itemId" />
+    <result column="USER_ID" jdbcType="VARCHAR" property="userId" />
+  </resultMap>
+</mapper>

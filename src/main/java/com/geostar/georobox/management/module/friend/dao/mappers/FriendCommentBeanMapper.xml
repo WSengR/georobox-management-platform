@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.geostar.georobox.management.module.friend.dao.FriendCommentBeanMapper">
+  <resultMap id="BaseResultMap" type="com.geostar.georobox.management.module.friend.model.FriendCommentBean">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="COMMENT_ID" jdbcType="VARCHAR" property="commentId" />
+    <result column="ITEM_ID" jdbcType="VARCHAR" property="itemId" />
+    <result column="USER_ID" jdbcType="VARCHAR" property="userId" />
+    <result column="REPLY_ID" jdbcType="VARCHAR" property="replyId" />
+    <result column="CONTENT" jdbcType="VARCHAR" property="content" />
+    <result column="CREATETIME" jdbcType="VARCHAR" property="createtime" />
+    <result column="DATETIME" jdbcType="TIMESTAMP" property="datetime" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.geostar.georobox.management.module.friend.model.FriendCommentBean">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="COMMENT" jdbcType="VARCHAR" property="comment" />
+    <result column="ITEM_ID" jdbcType="VARCHAR" property="itemId" />
+    <result column="USER_ID" jdbcType="VARCHAR" property="userId" />
+    <result column="REPLY_ID" jdbcType="VARCHAR" property="replyId" />
+    <result column="CONTENT" jdbcType="VARCHAR" property="content" />
+    <result column="CREATETIME" jdbcType="VARCHAR" property="createtime" />
+    <result column="DATETIME" jdbcType="TIMESTAMP" property="datetime" />
+  </resultMap>
+</mapper>

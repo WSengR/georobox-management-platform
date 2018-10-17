@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>APK发布与更新</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../js/webuploader/webuploader.css" />
+		<link rel="stylesheet" href="../../css/font-awesome/css/font-awesome.css" />
+		<link rel="stylesheet" href="../../css/public.css" media="all" />
+	</head>
+
+	<body class="childrenBody" style="overflow-x: hidden;overflow-y: scroll;">
+		<!--无数据-->
+		<div class="noapk hide">
+			<img src="../../images/noinfo.png" style="display: block;margin: 0 auto;" />
+			<button type="button" class="layui-btn goupapk" style="margin: 0 auto;display: block;">上传APK</button>
+		</div>
+		<div class="yesapk">
+			<blockquote class="layui-elem-quote quoteBox">
+				<form class="layui-form">
+					<div class="layui-inline apkheadinfo">
+						<!--<label class="layui-inline magr15">APK名称</label>
+					<label class="layui-inline magr15">当前版本：1.2.3</label>
+					<label class="layui-inline magr15">上传时间：2018-03-24</label>
+					<label class="layui-inline magr15">已下载：25次</label>-->
+					</div>
+					<div class="layui-inline">
+						<a class="layui-btn apk-download">APK详情</a>
+					</div>
+					<div class="layui-inline">
+						<a class="layui-btn layui-btn-normal apk-upload">发布新版本</a>
+					</div>
+					<!--<div class="layui-inline">
+					<a class="layui-btn layui-btn-normal apk-change">版本修改</a>
+				</div>-->
+				</form>
+			</blockquote>
+			<div class="layui-row">
+				<form class="layui-form apk-uploadbox hide">
+
+					<div class="layui-row layui-col-space30">
+						<h2 class="layui-col-xs-offset2">新版本发布</h2>
+						<div class="layui-col-xs4 layui-col-xs-offset2">
+							<div>
+								<label class="layui-form-label friend-label" for=""><span>*</span>APK名称</label>
+								<input id="apkName" class="layui-input" placeholder="APK名称" />
+							</div>
+							<div>
+								<label class="layui-form-label friend-label" for=""><span>*</span>包名</label>
+								<input id="packageName" class="layui-input" placeholder="请输入包名" />
+							</div>
+							<div>
+								<label class="layui-form-label friend-label" for=""><span>*</span>版本名（VersionName）</label>
+								<input id="apkVersionName" class="layui-input" placeholder="请输入版本名" />
+							</div>
+							<div>
+								<label class="layui-form-label friend-label" for=""><span>*</span>版本号（VersionCode）</label>
+								<input id="apkVersionCode" class="layui-input" placeholder="请输入版本号" onkeyup='this.value=this.value.replace(/\D/gi,"")'/>
+
+							</div>
+
+							<div id="uploadfile">
+								<label class="layui-form-label friend-label" for=""><span>*</span>APK上传</label>
+								<!--用来存放文件信息-->
+								<div class="layui-form-item apkup">
+									<div class="layui-input-block">
+										<input id="apkuploadval" name="title" required="" lay-verify="required" placeholder="选择上传APK" autocomplete="off" class="layui-input" type="text" readonly="readonly">
+									</div>
+									<div id="apkupload" type="button" class="layui-btn layui-col-xs3">上传APK</div>
+								</div>
+							</div>
+							<!--这个东西不知道为什么必须的存在-->
+							<div id="dndArea" class="placeholder">
+							</div>
+
+							<div>
+								<label class="layui-form-label friend-label" for=""><span>*</span>ICON上传</label>
+								<div class="layui-form-item apkup apkupicon">
+									<div class="layui-input-block">
+										<input id="apkiconuploadval" name="title" required="" lay-verify="required" placeholder="选择上传APK图标" autocomplete="off" class="layui-input" type="text" readonly="readonly">
+									</div>
+									<button id="apkiconupload" type="button" class="layui-btn layui-col-xs3">上传ICON</button>
+								</div>
+							</div>
+						</div>
+						<div class="layui-col-xs4">
+							<div>
+								<label class="layui-form-label friend-label" for="">更新描述</label>
+								<textarea id="apkUploadInfo" class="layui-textarea" placeholder="请输入更新描述"></textarea>
+							</div>
+							<div>
+								<label class="layui-form-label friend-label" for="">项目描述</label>
+								<textarea id="apkDescirbe" class="layui-textarea" placeholder="请输入项目描述"></textarea>
+							</div>
+
+							<div class="layui-form-item" pane="">
+								<input id="isMustUpload" name="like1[write]" lay-skin="primary" title="强制更新当前版本" type="checkbox" lay-filter="mustUpload">
+							</div>
+
+							<div class="layui-row magt30">
+								<a id="newapkup" class="layui-btn layui-col-xs5">确认更新</a>
+								<button type="reset" class="layui-btn layui-col-xs5 layui-col-xs-offset2 resetapk">重置表单</button>
+							</div>
+
+						</div>
+					</div>
+
+				</form>
+				<form class="layui-col-xs12 apk-downloadbox">
+					<div class="magt30 layui-row">
+						<div class="layui-col-xs8">
+							<div id="apkicon">
+								<!--<img class="apklogo" src="../../images/team_logo.jpg" />-->
+							</div>
+							<div class="apkinfo">
+								<p class="apkinfoname"></p>
+								<button class="layui-btn apkdownload-btn">下载最新版</button>
+							</div>
+						</div>
+						<div class="layui-col-xs4">
+							<div style="width: 140px;">
+								<div id="apkerw"></div>
+								<!--<img src="../../images/erw.png" style="width: 140px;height: 140px;" />-->
+								<p style="text-align: center;line-height: 20px;">扫码下载apk</p>
+							</div>
+						</div>
+					</div>
+					<div class="magt30 layui-row layui-col-space20">
+						<div class="layui-col-md8">
+							<div class="apklist">
+								<div class="apklistit">APK简介</div>
+								<div id="apklistinfo"></div>
+							</div>
+							<div class="apklist">
+								<div class="apklistit">更新描述</div>
+								<div id="apklistup"></div>
+							</div>
+							<div class="apklist">
+								<div class="apklistit">历史版本</div>
+								<table id="apklist" lay-filter="apklist"></table>
+							</div>
+
+						</div>
+						<div class="layui-col-md4">
+							<div class="apklist apklistmess">
+								<div class="apklistit">基本信息</div>
+								<div id="apkinfo"></div>
+							</div>
+
+							<div class="downlistapk hide">
+								<div class="apklistit">版本更新记录</div>
+								<table id="apkdllist"></table>
+							</div>
+
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div id="apkupboom" class="hide">
+			<p class="apkupboomtit">是否确认发布该APK</p>
+			<p class="upload-state"></p>
+			<div class="layui-progress layui-progress-big" lay-filter="demo" lay-showPercent="true">
+				<div class="layui-progress-bar" lay-percent="0%">
+				</div>
+			</div>
+			<!--<button type="button" class="stopupload layui-btn">暂停上传</button>-->
+			<div class="apkupboombtn" class="layui-row">
+				<button id="apkboomStop" class="layui-col-xs3 layui-btn layui-btn-danger pull-right">取消</button>
+				<button id="apkboomSure" class="layui-col-xs3 layui-btn pull-right">确认</button>
+			</div>
+		</div>
+		<script type="text/html" id="apkListTable">
+			<a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="delapk">删除</a>
+			<a class="layui-btn layui-btn-xs" lay-event="download">下载</a>
+			<a class="layui-btn layui-btn-xs" lay-event="downloadlist">查看更新记录</a>
+		</script>
+
+		<script type="text/javascript" src="../../layui/layui.js"></script>
+		<script type="text/javascript" src="../../js/jquery-2.1.0.js"></script>
+		<!--二维码生成工具-->
+		<script type="text/javascript" src="../../js/qrcode/jquery.qrcode.js"></script>
+		<script type="text/javascript" src="../../js/qrcode/qrcode.js"></script>
+
+		<script type="text/javascript" src="../../js/webuploader/webuploader.min.js"></script>
+
+		<script type="text/javascript" src="../../js/HttpUrl.js"></script>
+		<script type="text/javascript" src="apkUpload.js"></script>
+
+	</body>
+
+</html>

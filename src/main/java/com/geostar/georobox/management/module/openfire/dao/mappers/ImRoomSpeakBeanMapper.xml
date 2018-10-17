@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.geostar.georobox.management.module.openfire.dao.ImRoomSpeakBeanMapper">
+  <resultMap id="BaseResultMap" type="com.geostar.georobox.management.module.openfire.model.ImRoomSpeakBean">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ROOM_ID" jdbcType="VARCHAR" property="roomId" />
+    <id column="USER_ID" jdbcType="VARCHAR" property="userId" />
+    <result column="CAN_SPEAK" jdbcType="DECIMAL" property="canSpeak" />
+  </resultMap>
+</mapper>

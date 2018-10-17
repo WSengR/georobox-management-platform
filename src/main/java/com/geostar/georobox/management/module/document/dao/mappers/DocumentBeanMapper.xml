@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.geostar.georobox.management.module.document.dao.DocumentBeanMapper" >
+  <resultMap id="BaseResultMap" type="com.geostar.georobox.management.module.document.model.DocumentBean" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="FILE_NAME" property="fileName" jdbcType="VARCHAR" />
+    <result column="FILE_PATH" property="filePath" jdbcType="VARCHAR" />
+    <result column="FILE_SIZE" property="fileSize" jdbcType="VARCHAR" />
+    <result column="FILE_STATE" property="fileState" jdbcType="DECIMAL" />
+    <result column="DATETIME" property="datetime" jdbcType="TIMESTAMP" />
+  </resultMap>
+</mapper>

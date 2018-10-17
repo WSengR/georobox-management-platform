@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>发布朋友圈</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../css/font-awesome/css/font-awesome.css" />
+		<link rel="stylesheet" href="../../css/public.css" media="all" />
+	</head>
+
+	<body class="childrenBody" style="width: 92%;height: 490px;padding: 10px 4%;">
+		<form class="layui-form edit-add-fr">
+			<textarea class="layui-block" style="border: none;resize: none;height: 125px;" placeholder="这一刻的想法..."></textarea>
+			<div class="layui-upload">
+				<div class="imguplist pull-left">
+					<div id="imgup" class="imgup pull-left">
+						<span class="fa fa-plus"></span>
+					</div>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">选择访问权限</label>
+				<div class="layui-input-block">
+					<select name="city" lay-verify="required">
+						<option value="0">所有人可见</option>
+						<option value="1">仅自己可见</option>
+						<option value="2">部分人可见</option>
+					</select>
+				</div>
+			</div>
+			<div class="layui-col-space20 magt30">
+				<div class="layui-col-xs6 layui-col-md3 layui-col-md-offset6">
+					<a class="layui-btn search_btn layui-block upload-btn uploadnew">发布</a>
+				</div>
+				<div class="layui-col-xs6 layui-col-md3">
+					<a class="layui-btn layui-btn-normal layui-layer-close layui-btn-danger layui-block upload-close-btn">取消</a>
+				</div>
+			</div>
+		</form>
+		
+		<div id="uploadboom" class="hide">
+			<p class="openboomp">确定要发布该条朋友圈么？</p>
+    		<div class="layui-layer-btn layui-layer-btn-r"><a id="upfirend" class="layui-layer-btn0">确定</a><a class="layui-layer-btn1">取消</a></div>
+		</div>
+		<div id="changeboom" class="hide">
+			<p class="openboomp">确定要修改该条朋友圈么？</p>
+    		<div class="layui-layer-btn layui-layer-btn-r"><a id="changefirend" class="layui-layer-btn0">确定</a><a class="layui-layer-btn1">取消</a></div>
+		</div>
+		<script type="text/javascript" src="../../layui/layui.all.js"></script>
+		<script type="text/javascript" src="../../layui/layui.js"></script>
+		<script type="text/javascript" src="../../js/jquery-2.1.0.js"></script>
+		<script type="text/javascript" src="../../js/HttpUrl.js"></script>
+		<script type="text/javascript" src="friend-jq.js"></script>
+		<script type="text/javascript" src="friend.js"></script>
+
+	</body>
+
+</html>

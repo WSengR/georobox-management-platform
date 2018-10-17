@@ -1,0 +1,29 @@
+tbody .layui-table-cell{height: 80px;line-height: 80px;}
+.layui-rate{padding: 0;}
+.layui-badge:nth-child(6n+1){background-color: #FF5722;}
+.layui-badge:nth-child(6n+2){background-color: #FFB800;}
+.layui-badge:nth-child(6n+3){background-color: #009688;}
+.layui-badge:nth-child(6n+4){background-color: #2F4056;}
+.layui-badge:nth-child(6n+5){background-color: #1E9FFF;}
+.layui-badge:nth-child(6n+6){background-color: #393D49;}
+
+#tagBoom{padding: 0 40px;}
+.tagshowlist{height: 300px;overflow-x: hidden;overflow-y: auto;padding: 15px 0;}
+.addtxt .layui-form-label{width: 60px;padding: 9px 0;}
+.addtxt .layui-input-block{margin-left: 65px;}
+.badgebox{margin: 5px;position: relative;}
+.badgebox .layui-badge{padding: 5px 10px;}
+.badgebox .delicon{display: none;position: absolute;top: -7px;right: -5px;font-size: 14px;color: red;cursor: pointer;}
+.badgebox:hover .delicon{display: block;}
+
+.badgebox:nth-child(6n+1) .layui-badge{background-color: #FF5722;}
+.badgebox:nth-child(6n+2) .layui-badge{background-color: #FFB800;}
+.badgebox:nth-child(6n+3) .layui-badge{background-color: #009688;}
+.badgebox:nth-child(6n+4) .layui-badge{background-color: #2F4056;}
+.badgebox:nth-child(6n+5) .layui-badge{background-color: #1E9FFF;}
+.badgebox:nth-child(6n+6) .layui-badge{background-color: #393D49;}
+body .tagboom .layui-layer-btn .layui-layer-btn0{background:#ed5565;color: #fff;border: 1px solid #ed5565;}
+
+tbody td[data-field="tag"] .layui-table-cell{line-height: 40px; word-wrap:break-word;white-space: normal;}
+tbody td[data-field="tag"] .layui-badge{margin: 5px;}
+.layui-table-body{overflow-y: scroll;}
